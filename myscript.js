@@ -23,7 +23,6 @@ function calculateDivision(form) {
 function handlePalindromeForm(form) {
 	let formValue = form.inputbox2.value;
 	document.getElementById('palindromeResult').innerHTML = palindrome(formValue);
-	console.log('wow');
 }
 
 function palindrome(var1) {
@@ -40,6 +39,43 @@ function palindrome(var1) {
 	}
 
 	return isPalindrome;
+}
+
+function findSndLargest(array) {
+	let max = array[0];
+	let temp = array[0];
+	let id = 0;
+	if (typeof temp == 'string') {
+		temp = temp.length;
+	}
+	if (typeof max == 'string') {
+		max = max.length;
+	}
+
+	for (let index = 0; index < array.length; index++) {
+		let element = array[index];
+		if (typeof element == 'string') {
+			element = element.length;
+		}
+		if (max < element) max = element;
+	}
+
+	for (let index = 0; index < array.length; index++) {
+		let element = array[index];
+		if (typeof element == 'string') {
+			element = element.length;
+		}
+		if (temp < element && element < max) {
+			temp = element;
+			id = index;
+		}
+	}
+
+	if (typeof array[id] == 'string') {
+		return array[id];
+	} else {
+		return temp;
+	}
 }
 
 function handleAnagramForm(form) {
@@ -99,6 +135,10 @@ function anagram(var1, var2) {
 	return flag;
 }
 
-console.log(anagram('siema', 'siemb'));
-console.log('a'.charCodeAt(0));
-console.log('b'.charCodeAt(0));
+// console.log(anagram('siema', 'siemb'));
+// console.log('a'.charCodeAt(0));
+// console.log('b'.charCodeAt(0));
+
+console.log(findSndLargest([1, 5, 10, 15]));
+console.log(findSndLargest([1, 1, 3, 3, 4, 4]));
+console.log(findSndLargest(['ala', 'robert', 'stanislaw']));
