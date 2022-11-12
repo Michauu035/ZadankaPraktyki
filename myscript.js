@@ -1,16 +1,29 @@
-function handleCalculatorForm(form) {
-	let toDisplay = form.inputbox.value;
-	document.getElementById('calcResult').innerHTML = calculate(toDisplay, '+-/*');
+function calculateSum(form) {
+	let num1 = parseInt(form.num1.value);
+	let num2 = parseInt(form.num2.value);
+	document.getElementById('calcResult').innerHTML = num1 + num2;
+}
+
+function calculateSubstraction(form) {
+	let num1 = parseInt(form.num1.value);
+	let num2 = parseInt(form.num2.value);
+	document.getElementById('calcResult').innerHTML = num1 - num2;
+}
+function calculateMultiplication(form) {
+	let num1 = parseInt(form.num1.value);
+	let num2 = parseInt(form.num2.value);
+	document.getElementById('calcResult').innerHTML = num1 * num2;
+}
+function calculateDivision(form) {
+	let num1 = parseInt(form.num1.value);
+	let num2 = parseInt(form.num2.value);
+	document.getElementById('calcResult').innerHTML = num1 / num2;
 }
 
 function handlePalindromeForm(form) {
 	let formValue = form.inputbox2.value;
 	document.getElementById('palindromeResult').innerHTML = palindrome(formValue);
 	console.log('wow');
-}
-
-function calculate(var1, var2) {
-	return 0;
 }
 
 function palindrome(var1) {

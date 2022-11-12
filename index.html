@@ -8,7 +8,10 @@
     <FORM NAME="calculatorForm" ACTION="" METHOD="GET">Enter something in the box: <BR>
         <INPUT TYPE="number" NAME="num1" VALUE="">
         <INPUT TYPE="number" NAME="num2" VALUE="">
-        <INPUT TYPE="button" NAME="button" Value="Calculate" onClick="handleCalculatorForm(this.form)">
+        <INPUT TYPE="button" NAME="button" Value="+" onClick="calculateSum(this.form)">
+        <INPUT TYPE="button" NAME="button" Value="-" onClick="calculateSubstraction(this.form)">
+        <INPUT TYPE="button" NAME="button" Value="*" onClick="calculateMultiplication(this.form)">
+        <INPUT TYPE="button" NAME="button" Value="/" onClick="calculateDivision(this.form)">
     </FORM>
     <div id="calcResult"></div>
     <FORM NAME="palindromeForm" ACTION="" METHOD="GET">Enter something in the box: <BR>
