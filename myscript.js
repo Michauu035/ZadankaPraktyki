@@ -20,6 +20,31 @@ function calculateDivision(form) {
 	document.getElementById('calcResult').innerHTML = num1 / num2;
 }
 
+function handleCalculateLogarithm(form) {
+	let x = parseFloat(form.num1.value);
+	document.getElementById('calcResult').innerHTML = logarithm(x);
+}
+
+function logarithm(x) {
+	return x > 1 ? 1 + logarithm(x / 2) : 0;
+}
+
+function handleCalculatePower(form) {
+	let num1 = parseFloat(form.num1.value);
+	let num2 = parseFloat(form.num2.value);
+	document.getElementById('calcResult').innerHTML = power(num1, num2);
+}
+
+function handleModulo(form) {
+	let num1 = parseFloat(form.num1.value);
+	let num2 = parseFloat(form.num2.value);
+	document.getElementById('calcResult').innerHTML = num1 % num2;
+}
+
+function power(base, expotent) {
+	return expotent < 1 ? 1 : base * power(base, expotent - 1);
+}
+
 function handlePalindromeForm(form) {
 	let formValue = form.inputbox2.value;
 	document.getElementById('palindromeResult').innerHTML = palindrome(formValue);
@@ -135,10 +160,11 @@ function anagram(var1, var2) {
 	return flag;
 }
 
-// console.log(anagram('siema', 'siemb'));
-// console.log('a'.charCodeAt(0));
-// console.log('b'.charCodeAt(0));
+console.log(anagram('siema', 'siemb'));
+console.log('a'.charCodeAt(0));
+console.log('b'.charCodeAt(0));
 
+console.log('snd largest: ');
 console.log(findSndLargest([1, 5, 10, 15]));
 console.log(findSndLargest([1, 1, 3, 3, 4, 4]));
 console.log(findSndLargest(['ala', 'robert', 'stanislaw']));
