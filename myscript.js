@@ -94,6 +94,11 @@ function findSndLargest(array) {
 	return typeof array[id] == 'string' ? array[id] : temp;
 }
 
+function writeRange(a, b) {
+	console.log(a);
+	return a >= b ? b : writeRange(a + 1, b);
+}
+
 // function handleAnagramForm(form) {
 // 	let word1 = form.inputbox3.value;
 // 	let word2 = form.inputbox4.value;
@@ -159,3 +164,9 @@ console.log('snd largest: ');
 console.log(findSndLargest([1, 5, 10, 15]));
 console.log(findSndLargest([1, 1, 3, 3, 4, 4]));
 console.log(findSndLargest(['ala', 'robert', 'stanislaw']));
+
+console.log('Zadanie 4');
+writeRange(1, 5);
+console.log('=========');
+writeRange(8, 11);
+console.log('=========');
