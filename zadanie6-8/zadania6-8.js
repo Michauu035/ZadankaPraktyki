@@ -24,9 +24,9 @@ const books = [
 const compose = (...fns) => (x) => fns.reduceRight((acc, fn) => fn(acc), x);
 
 // Zad 6
-const countLetters = (books) => {
-	let list = [...books]
-	list.forEach(book => {
+const countLetters = (list) => {
+	let temp = JSON.parse(JSON.stringify(list))
+	temp.forEach(book => {
 		let sum = 0;
 		let words = book.title.split(' ')
 		words.forEach(element => {
@@ -34,15 +34,15 @@ const countLetters = (books) => {
 		});
 		book.letters = sum
 	});
-
-	return list
+	return temp
 }
 
-const filterPagesAreEven = (books) => books.filter(x => x.pages % 2 == 0)
-const filterGenreEndsWithY = (books) => books.filter(x => x.genre.slice(-1) === 'y')
+const filterPagesAreEven = (list) => list.filter(x => x.pages % 2 == 0)
+const filterGenreEndsWithY = (list) => list.filter(x => x.genre.slice(-1) === 'y')
 const countLettersOfSpecificBooks = compose(countLetters, filterPagesAreEven, filterGenreEndsWithY)
 
 console.log(countLettersOfSpecificBooks(books));
+
 
 // Zad 7
 const filterGoodRatings = (books) => books.filter(book => book.rating > 5)
@@ -60,7 +60,6 @@ const getSecondLongest = (array) => {
 }
 
 console.log(getSecondLongest(books));
-console.log(books);
 
 //PRZYKŁADY:
 //tworzymy funkcje
