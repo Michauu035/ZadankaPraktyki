@@ -23,7 +23,7 @@ var multiplyAsync = (x, y) => new Promise((resolve, reject) => {
 	if(isNaN(x) || isNaN(y)) {
 		reject("Porażka! Argument nie jest liczbą")
 	} else resolve(x*y)
-})
+}).catch(e => console.error(e))
 
 multiplyAsync(3, 6).then(value => console.log(value))
 multiplyAsync(3, "asd").then(value => console.log(value))
